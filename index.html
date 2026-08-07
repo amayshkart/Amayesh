@@ -33,7 +33,6 @@
   ::selection{ background:var(--gold-bright); color:var(--navy-deep); }
   a{color:inherit; text-decoration:none;}
 
-  /* ===== Header ===== */
   header{
     position:sticky; top:0; z-index:50;
     background:rgba(250,246,236,0.92);
@@ -69,7 +68,6 @@
   }
   .cta-gold:hover{ background:transparent; color:var(--gold); }
 
-  /* ===== Hero ===== */
   .hero{
     max-width:1200px; margin:0 auto; padding:70px 28px 50px;
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;
@@ -85,7 +83,6 @@
   .hero p.lead{ font-size:16px; color:#4a4a44; max-width:500px; margin-bottom:28px; }
   .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; }
 
-  /* ===== کارت گرافیکی هیرو ===== */
   .card-stage{ position:relative; height:300px; }
   .id-card{
     position:absolute; width:320px; height:200px; border-radius:14px;
@@ -126,7 +123,6 @@
     border:1px solid var(--line);
   }
 
-  /* ===== Trustbar ===== */
   .trustbar{
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
     background:var(--sand);
@@ -139,13 +135,11 @@
   .trustbar-inner div{ display:flex; align-items:center; gap:8px; }
   .trustbar-inner .num{ font-family:'IBM Plex Mono'; font-weight:600; color:var(--gold); font-size:15px; }
 
-  /* ===== سکشن‌ها ===== */
   section{ max-width:1200px; margin:0 auto; padding:70px 28px; }
   .section-head{ max-width:600px; margin-bottom:48px; }
   h2{ font-size:30px; font-weight:800; color:var(--navy-deep); margin-bottom:12px; }
   .section-head p{ color:#5a5a52; font-size:15px; }
 
-  /* ===== بخش استعلام ===== */
   .inquiry-wrapper{
     background:var(--navy-deep); border-radius:16px; padding:48px 48px 56px;
     color:var(--sand);
@@ -166,7 +160,6 @@
   .field input::placeholder{ color:rgba(239,230,211,0.3); }
   .field input:focus{ border-color:var(--gold-bright); }
 
-  /* ===== کارت نتیجه استعلام (مربعی + چیدمان جدید) ===== */
   .result-card{
     margin-top:24px;
     background:rgba(250,246,236,0.06);
@@ -187,7 +180,6 @@
     gap:28px;
     align-items:start;
   }
-  /* ===== عکس سمت چپ (مربعی) ===== */
   .result-photo{
     display:flex;
     flex-direction:column;
@@ -212,7 +204,6 @@
     font-size:48px;
     color:rgba(239,230,211,0.3);
   }
-  /* ===== اطلاعات سمت راست ===== */
   .result-info{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -231,11 +222,11 @@
     margin-top:2px;
   }
 
-  /* ===== درباره ما و فرآیند ===== */
   .about-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;
   }
   .about-text p{ color:#4a4a44; margin-bottom:14px; font-size:15px; }
+
   .process{
     display:grid; grid-template-columns:1fr 1fr; gap:18px;
   }
@@ -248,7 +239,6 @@
   .step h3{ font-size:16px; color:var(--navy-deep); margin:6px 0 4px; }
   .step p{ font-size:13.5px; color:#5a5a52; }
 
-  /* ===== خدمات ===== */
   .services{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
   .svc{
     background:var(--paper); border:1px solid var(--line); border-radius:10px;
@@ -258,7 +248,6 @@
   .svc h3{ font-size:16px; color:var(--navy-deep); margin-bottom:6px; }
   .svc p{ font-size:13.5px; color:#5a5a52; }
 
-  /* ===== فوتر ===== */
   footer{ border-top:1px solid var(--line); padding:40px 28px 24px; }
   .footer-inner{
     max-width:1200px; margin:0 auto; display:flex; justify-content:space-between;
@@ -273,7 +262,29 @@
     font-size:12px; color:#8a8a80; display:flex; justify-content:center;
   }
 
-  /* ===== ریسپانسیو ===== */
+  .loading-status{
+    display:none;
+    text-align:center;
+    padding:16px 20px;
+    margin-top:16px;
+    background:rgba(214,168,92,0.12);
+    border:1px solid rgba(214,168,92,0.2);
+    border-radius:8px;
+    color:var(--gold-bright);
+    font-weight:600;
+    font-size:15px;
+  }
+  .loading-status .dots::after{
+    content:'';
+    animation:dots 1.5s steps(4) infinite;
+  }
+  @keyframes dots{
+    0%{ content:''; }
+    25%{ content:'.'; }
+    50%{ content:'..'; }
+    75%{ content:'...'; }
+  }
+
   @media (max-width: 860px){
     .hero{ grid-template-columns:1fr; padding-top:40px; gap:30px; }
     .card-stage{ height:220px; order:-1; }
@@ -281,16 +292,9 @@
     .card-shadow-2{ width:280px; height:180px; }
     .inquiry-grid{ grid-template-columns:1fr; gap:30px; }
     .inquiry-wrapper{ padding:32px 20px; }
-    .result-body{
-      grid-template-columns:1fr;
-      text-align:center;
-    }
-    .result-photo{
-      align-items:center;
-    }
-    .result-info{
-      grid-template-columns:1fr;
-    }
+    .result-body{ grid-template-columns:1fr; text-align:center; }
+    .result-photo{ align-items:center; }
+    .result-info{ grid-template-columns:1fr; }
     .about-grid{ grid-template-columns:1fr; }
     .process{ grid-template-columns:1fr; }
     .services{ grid-template-columns:1fr; }
@@ -306,7 +310,6 @@
 </head>
 <body>
 
-<!-- ===== هدر ===== -->
 <header>
   <div class="nav">
     <div class="brand">
@@ -327,7 +330,6 @@
   </div>
 </header>
 
-<!-- ===== بخش Hero ===== -->
 <section class="hero">
   <div>
     <div class="eyebrow">سامانه هوشمند استعلام کارت آمایش</div>
@@ -347,7 +349,7 @@
         <div class="id-seal"></div>
       </div>
       <div class="id-fields">
-        <div class="id-row"><span class="k">شناسه یکتا</span><span class="v blur">۲۲۴●●●●۹۱</span></div>
+        <div class="id-row"><span class="k">شناسه یکتا</span><span class="v blur">●●●●●●</span></div>
         <div class="id-row"><span class="k">وضعیت</span><span class="v blur">در حال بررسی</span></div>
         <div class="id-row"><span class="k">اعتبار تا</span><span class="v">۱۴۰۴ / ۰۶</span></div>
       </div>
@@ -356,16 +358,13 @@
   </div>
 </section>
 
-<!-- ===== نوار اعتماد ===== -->
 <div class="trustbar">
   <div class="trustbar-inner">
-    <div><span class="num">+۱۲ سال</span> تجربه در خدمات اتباع</div>
     <div><span class="num">امن</span> عدم نگهداری اطلاعات هویتی</div>
     <div><span class="num">پشتیبانی</span> پاسخگویی تمام روزهای هفته</div>
   </div>
 </div>
 
-<!-- ===== درباره ما ===== -->
 <section id="about">
   <div class="about-grid">
     <div class="about-text">
@@ -383,7 +382,6 @@
   </div>
 </section>
 
-<!-- ===== فرآیند ===== -->
 <section id="process">
   <div class="section-head">
     <div class="eyebrow">راهنمای استفاده</div>
@@ -391,14 +389,13 @@
     <p>مسیری ساده و خطی برای دریافت وضعیت کارت آمایش.</p>
   </div>
   <div class="process">
-    <div class="step"><div class="num">۰۱</div><h3>ثبت شناسه یکتا</h3><p>شناسه ۱۲ رقمی کارت آمایش خود را در فرم وارد کنید.</p></div>
+    <div class="step"><div class="num">۰۱</div><h3>ثبت شناسه یکتا</h3><p>شناسه ۶ رقمی کارت آمایش خود را در فرم وارد کنید.</p></div>
     <div class="step"><div class="num">۰۲</div><h3>بررسی در سامانه</h3><p>اطلاعات شما با پایگاه داده مرجع تطبیق داده می‌شود.</p></div>
     <div class="step"><div class="num">۰۳</div><h3>دریافت وضعیت</h3><p>وضعیت اعتبار، تاریخ صدور و انقضای کارت نمایش داده می‌شود.</p></div>
     <div class="step"><div class="num">۰۴</div><h3>گزارش نهایی</h3><p>نتیجه استعلام به همراه جزئیات کامل در اختیار شما قرار می‌گیرد.</p></div>
   </div>
 </section>
 
-<!-- ===== خدمات ===== -->
 <section id="services">
   <div class="section-head">
     <div class="eyebrow">خدمات ما</div>
@@ -411,7 +408,6 @@
   </div>
 </section>
 
-<!-- ===== بخش استعلام اصلی ===== -->
 <section id="inquiry">
   <div class="inquiry-wrapper">
     <div class="inquiry-grid">
@@ -425,22 +421,23 @@
       <div>
         <div class="inquiry-form">
           <div class="field">
-            <label>شناسه یکتا (سریال کارت آمایش)</label>
-            <input type="text" id="amayeshId" placeholder="مثال: 224123456789" class="mono" maxlength="12" inputmode="numeric">
+            <label>شناسه یکتا</label>
+            <input type="text" id="amayeshId" placeholder="مثال: ۱۲۳۴۵۶" class="mono" maxlength="6" inputmode="numeric">
           </div>
           <button class="cta-btn cta-gold" style="width:100%;" onclick="handleInquiry()">ارسال درخواست استعلام</button>
         </div>
 
-        <!-- ===== کارت نتیجه استعلام ===== -->
+        <div id="loadingStatus" class="loading-status">
+          درحال استعلام<span class="dots"></span>
+        </div>
+
         <div id="resultCard" class="result-card">
           <div class="result-header">نتیجه استعلام کارت آمایش</div>
           <div class="result-body">
-            <!-- عکس سمت چپ (مربعی) -->
             <div class="result-photo">
               <img id="resultPhoto" src="" alt="عکس" style="display:none;">
               <div id="noPhoto" class="no-photo">👤</div>
             </div>
-            <!-- اطلاعات سمت راست -->
             <div class="result-info">
               <div class="item"><div class="label">نام و نام خانوادگی</div><div class="value" id="rName">—</div></div>
               <div class="item"><div class="label">نام پدر</div><div class="value" id="rFather">—</div></div>
@@ -456,7 +453,6 @@
   </div>
 </section>
 
-<!-- ===== فوتر ===== -->
 <footer id="contact">
   <div class="footer-inner">
     <div style="max-width:280px;">
@@ -489,86 +485,120 @@
 
 <script>
 // ============================================================
-//  دیتابیس نمونه (شناسه فقط عددی)
+//  📚 دیتابیس (شناسه ۶ رقمی)
 // ============================================================
 const database = {
-  "224123456789": {
+  "143676": {
     name: "زرولی نواب زاده",
-    father: "حاجی نواب",
-    id: "224123456789",
+    father: "حاجی نواب ",
+    id: "123456",
     issueDate: "۱۴۰۵/۰۵/۱۴",
     expiryDate: "۱۴۰۶/۰۵/۱۴",
-    residence: "تهران ",
+    residence: "تهران",
     photo: "https://cdn.imgurl.ir/uploads/c022417_IMG-20260802-WA0043.jpg"
   },
-  "224765432187": {
+  "654321": {
     name: "زهرا کریمی",
     father: "حسین کریمی",
-    id: "224765432187",
+    id: "654321",
     issueDate: "۱۴۰۱/۰۸/۲۲",
     expiryDate: "۱۴۰۳/۰۸/۲۲",
     residence: "اصفهان، خیابان امام",
     photo: ""
   },
-  "224987654321": {
+  "987654": {
     name: "سعید رضایی",
     father: "محمد رضایی",
-    id: "224987654321",
+    id: "987654",
     issueDate: "۱۴۰۳/۰۱/۱۵",
     expiryDate: "۱۴۰۵/۰۱/۱۵",
     residence: "شیراز، بلوار حافظ",
     photo: ""
-  }
+  },
+  // 👇 اطلاعات جدید رو اینجا اضافه کن (شناسه ۶ رقمی)
+  // "111111": {
+  //   name: "نام جدید",
+  //   father: "نام پدر",
+  //   id: "111111",
+  //   issueDate: "۱۴۰۴/۰۱/۰۱",
+  //   expiryDate: "۱۴۰۵/۰۱/۰۱",
+  //   residence: "تهران، خیابان ...",
+  //   photo: "https://your-image-link.jpg"
+  // }
 };
+
+// ============================================================
+//  تابع تبدیل اعداد فارسی به انگلیسی
+// ============================================================
+function convertToEnglishNumber(input) {
+  const persianMap = {
+    '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4',
+    '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9'
+  };
+  return input.replace(/[۰-۹]/g, function(match) {
+    return persianMap[match] || match;
+  });
+}
 
 // ============================================================
 //  تابع استعلام
 // ============================================================
 function handleInquiry() {
   const input = document.getElementById('amayeshId');
-  const id = input.value.trim();
+  const rawId = input.value.trim();
   const resultCard = document.getElementById('resultCard');
+  const loadingStatus = document.getElementById('loadingStatus');
+
+  const id = convertToEnglishNumber(rawId);
+
+  resultCard.style.display = 'none';
+  loadingStatus.style.display = 'none';
 
   if (!id) {
     alert('لطفاً شناسه یکتا را وارد کنید.');
     return;
   }
 
-  if (!/^\d{12}$/.test(id)) {
-    alert('شناسه یکتا باید ۱۲ رقم باشد.');
+  if (!/^\d{6}$/.test(id)) {
+    alert('شناسه یکتا باید ۶ رقم باشد.');
     return;
   }
 
-  const data = database[id];
+  loadingStatus.style.display = 'block';
+  resultCard.style.display = 'none';
 
-  if (!data) {
-    alert('شناسه یکتا معتبر نیست. لطفاً دوباره بررسی کنید.');
-    resultCard.style.display = 'none';
-    return;
-  }
+  setTimeout(() => {
+    loadingStatus.style.display = 'none';
 
-  // نمایش اطلاعات
-  document.getElementById('rName').textContent = data.name;
-  document.getElementById('rFather').textContent = data.father;
-  document.getElementById('rId').textContent = data.id;
-  document.getElementById('rIssueDate').textContent = data.issueDate;
-  document.getElementById('rExpiryDate').textContent = data.expiryDate;
-  document.getElementById('rResidence').textContent = data.residence;
+    const data = database[id];
 
-  // عکس
-  const img = document.getElementById('resultPhoto');
-  const noPhoto = document.getElementById('noPhoto');
-  if (data.photo && data.photo.trim() !== '') {
-    img.src = data.photo;
-    img.style.display = 'block';
-    noPhoto.style.display = 'none';
-  } else {
-    img.style.display = 'none';
-    noPhoto.style.display = 'flex';
-  }
+    if (!data) {
+      alert('شناسه یکتا معتبر نیست. لطفاً دوباره بررسی کنید.');
+      return;
+    }
 
-  resultCard.style.display = 'block';
-  resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('rName').textContent = data.name || '—';
+    document.getElementById('rFather').textContent = data.father || '—';
+    document.getElementById('rId').textContent = data.id || '—';
+    document.getElementById('rIssueDate').textContent = data.issueDate || '—';
+    document.getElementById('rExpiryDate').textContent = data.expiryDate || '—';
+    document.getElementById('rResidence').textContent = data.residence || '—';
+
+    const img = document.getElementById('resultPhoto');
+    const noPhoto = document.getElementById('noPhoto');
+    if (data.photo && data.photo.trim() !== '') {
+      img.src = data.photo;
+      img.style.display = 'block';
+      noPhoto.style.display = 'none';
+    } else {
+      img.style.display = 'none';
+      noPhoto.style.display = 'flex';
+    }
+
+    resultCard.style.display = 'block';
+    resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  }, 1500);
 }
 
 // ============================================================
@@ -585,6 +615,9 @@ document.getElementById('amayeshId').addEventListener('keydown', function(e) {
     handleInquiry();
   }
 });
+
+console.log('🚀 سامانه استعلام کارت آمایش');
+console.log('📚 تعداد رکوردها:', Object.keys(database).length);
 </script>
 
 </body>
